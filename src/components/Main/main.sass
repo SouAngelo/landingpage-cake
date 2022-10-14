@@ -1,0 +1,41 @@
+@mixin flex($j, $a, $f)
+   display: flex
+   justify-content: $j
+   align-items: $a
+   flex-direction: $f
+
+$font-red: #9f0311
+$font-black: #000000
+$font-grey: #e9eaea
+
+main
+    width: 100%
+    height: 100%
+    background: $font-grey
+
+.home
+    width: 100%
+    height: 100vh
+    margin-top: 70px
+    background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)) , url('https://images7.alphacoders.com/333/333634.jpg') no-repeat center center/cover
+    @include flex(center, start, none)
+
+.content-home
+    margin-top: 50px
+    width: 400px
+    text-align: center
+
+    & h1 
+        font-family: 'Dancing Script', cursive
+        font-size: 50px
+        color: #d8d8d8
+
+    & a 
+        border: 2px solid #ff9a5d
+        padding: 8px 20px
+        color: #ff9a5d
+        text-decoration: none
+        font-weight: bold 
+        font-family: 'lato', Arial
+        font-size: 18px
+        background: #1313134b

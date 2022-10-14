@@ -1,0 +1,36 @@
+@mixin flex($j, $a, $f)
+   display: flex
+   justify-content: $j
+   align-items: $a
+   flex-direction: $f
+
+$font-red: #9f0311
+$font-black: #000000
+$font-grey: #e9eaea
+
+.container-about
+    width: 100%
+    height: 100%
+    @include flex(center, center, column)
+    padding: 30px 0
+
+.about
+    width: 65%
+    margin: auto
+    text-align: center
+    @media screen and(max-width: 600px)
+        width: 80%
+
+    & p 
+        font-family: 'lato', arial
+        line-height: 29px
+
+.h1 
+    color: $font-red
+    font-family: 'Dancing Script', cursive
+    font-size: 40px
+    margin-bottom: 40px
+
+hr
+    border-color: $font-red
+    width: 150px

@@ -1,0 +1,76 @@
+@mixin flex($j, $a, $f)
+   display: flex
+   justify-content: $j
+   align-items: $a
+   flex-direction: $f
+
+$font-red: #9f0311
+$font-black: #000000
+$font-grey: #e9eaea
+
+.container-contato
+    width: 100%
+    height: 100%
+    @include flex(center, center, column)
+
+.section-ctt-img
+    width: 100%
+    height: 100%
+    @include flex(center, center, column)
+
+    & h1
+        font-size: 30px
+        margin-top: -20px
+
+.container-ctt-img
+    width: 80%
+    height: 100%
+    position: relative
+    @media screen and(max-width: 600px)
+        position: inherit
+
+    & img 
+        width: 100%
+        min-width: 200px
+        height: 500px
+        @media screen and(max-width: 600px)
+           height: 350px
+
+
+.card-contact
+    position: absolute
+    right: 50px
+    top: 90px
+    background: $font-red
+    color: #fff
+    width: 300px
+    min-width: 200px
+    height: 51%
+    @include flex(flex-start, start, column)
+    padding: 30px 20px
+    border-radius: 5px
+    margin-bottom: 50px
+    @media screen and(max-width: 600px)
+        position: inherit
+        width: 100%
+        padding: 20px 0
+    
+    & h1
+        font-family: 'Dancing Script', cursive
+        margin: 0 auto
+
+.info-ctt
+    width: 100%
+    margin-top: 30px
+    text-align: center
+
+    & h2 
+       font-size: 17px
+       font-weight: 400
+       font-family: 'lato', arial
+       margin-bottom: 20px
+
+    & i
+        cursor: pointer
+        font-size: 30px
+        color: green

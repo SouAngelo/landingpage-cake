@@ -1,0 +1,96 @@
+@mixin flex($j, $a, $f)
+   display: flex
+   justify-content: $j
+   align-items: $a
+   flex-direction: $f
+
+$font-white: #ffffff
+$font-grey: #e9eaea
+$font-red: #9f0311
+$font-black: #000000
+
+header
+    @include flex(space-around, center, row)
+    width: 100%
+    height: 70px
+    position: fixed
+    top: 0
+    left: 0
+    background: $font-white
+    z-index: 99
+
+.logo
+    font-family: 'Dancing Script', cursive
+    color: $font-red
+    cursor: pointer
+    &:hover
+            color: #000
+
+
+nav
+    width: 60%
+    min-width: 500px
+    @include flex(space-around, center, row)
+    font-family: 'lato', Arial
+    @media screen and(max-width: 900px)
+        justify-content: flex-end
+        min-width: 80px
+        width: 10%
+
+#burguer
+    display: none
+    @media screen and(max-width: 900px)
+        display: block
+    @media screen and(max-width: 600px)
+        font-size: 10px
+
+.menu
+    @include flex(space-between, center, row)
+    width: 70%
+    transition: ease-in .5s
+    @media screen and(max-width: 900px)
+        flex-direction: column
+        position: absolute
+        right: 0
+        top: 52px
+        background: #fff
+        min-width: 200px
+        width: 30%
+        height: 300px
+        @include flex(space-around, center, none)
+        padding: 0
+        // display: none
+        opacity: 0
+
+    & span 
+        @include flex(center, center, row)
+
+        & h1 
+            font-size: 16px
+        
+        & i 
+            font-size: 14px
+            margin-right: 8px
+
+    & a 
+        font-size: 18px
+        text-decoration: none
+        
+
+    & li
+        color: $font-black
+        @media screen and(max-width: 900px)
+            color: #000
+
+        &:hover
+            color: $font-red
+
+li 
+    list-style: none
+    color: #fff
+
+
+.burger .burger-lines,
+.burger .burger-lines:after,
+.burger .burger-lines:before
+    background-color: $font-black

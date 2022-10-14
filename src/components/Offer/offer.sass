@@ -1,0 +1,131 @@
+@mixin flex($j, $a, $f)
+   display: flex
+   justify-content: $j
+   align-items: $a
+   flex-direction: $f
+
+$font-red: #9f0311
+$font-black: #000000
+$font-grey: #e9eaea
+
+.sessao-offer
+    width: 100%
+    height: 100%
+
+.container-offer
+    width: 100%
+    @include flex(center, center, column)
+    margin-top: -40px
+
+    & h1 
+        font-size: 35px
+        
+.content-offer
+    width: 90%
+    height: 350px
+    @include flex(space-evenly, center, row)
+    @media screen and(max-width: 800px)
+        height: 100%
+        @include flex(center, center, column-reverse)
+    @media screen and(max-width: 600px)
+        width: 100%
+    
+    & img 
+        width: 60%
+        height: 100%
+        @media screen and(max-width: 800px)
+            width: 90%
+            height: 300px
+
+.info-offer
+    height: 330px
+    width: 30%
+    padding: 10px 10px
+    background: $font-red
+    color: #ffffff
+    text-align: center
+    padding: 20px 40px 0 40px
+    @media screen and(max-width: 800px)
+        width: 86%
+        height: 100%
+        padding: 0 10px
+        padding-bottom: 40px
+        margin-top: 25px
+        @media screen and(max-width: 600px)
+            width: 100%
+            padding: 0
+            padding-bottom: 30px
+        
+    & h1 
+        color: #fff
+        font-size: 30px
+
+    & p 
+        line-height: 30px
+        font-size: 17px
+        margin-bottom: 70px
+        margin-top: -15px
+
+    & a 
+        border: 1px solid $font-grey
+        padding: 8px 60px
+        color: $font-grey
+        text-decoration: none
+        font-family: 'lato', Arial
+        @media screen and(max-width: 1111px)
+            padding: 10px 50px
+
+        &:hover
+            border-color: $font-black
+            color: $font-black
+
+// comments
+
+.comments
+
+    & .fa-sharp 
+        font-size: 22px
+        transform: rotate(120deg)
+        margin-top: 10px
+        margin-bottom: 40px
+
+.content-comments
+    width: 80%
+    text-align: center
+    position: relative
+
+.arrows3
+    width: 100%
+    @include flex(space-between, center, row)
+    position: absolute
+    top: 70px
+    left: -5px
+
+    & i 
+        font-size: 20px
+        color: $font-red
+        cursor: pointer
+
+.carousel-content
+    width: 40%
+    height: 100%
+    margin: auto
+    @include flex(flex-start, center, row)
+    overflow-x: scroll
+    overflow-y: hidden
+    scroll-behavior: smooth
+    @media screen and(max-width: 950px)
+        width: 60%
+    @media screen and(max-width: 600px)
+        width: 80%
+
+    &::-webkit-scrollbar
+               display: none
+
+    & p 
+        font-size: 16px
+        line-height: 30px
+        font-family: 'lato', arial
+        width: 100%
+        flex: none
+        
